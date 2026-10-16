@@ -57,6 +57,13 @@ LOW_MODEL = "openai/gpt-4.1-mini"
 HIGH_MODEL = "openai/gpt-4.1"
 ```
 
+## For Docker Dekstop usecase only : 4.1(Docker Dekstop Instruction):-
+start Docker Desktop and run:
+```powershell
+docker compose up --build -d
+docker compose ps
+```
+
 5. Save the file and start the app. Select **Live → Auto** and submit a question.
 
 For Streamlit Community Cloud, enter the same configuration in

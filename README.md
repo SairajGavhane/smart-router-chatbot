@@ -138,7 +138,7 @@ Bounded context, an output cap and one selected answer model keep the flow econo
 Run offline tests (no API keys or paid calls required):
 
 ```powershell
-.\.venv\Scripts\python.exe -m unittest discover -s tests -v
+.\.venv\Scripts\python.exe -m unittest -v test_core
 ```
 
 `evaluation_prompts.json` contains a small starter set, not a benchmark result. Add real prompts

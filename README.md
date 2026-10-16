@@ -6,7 +6,8 @@ You need two API keys with credits/access for Live mode. Demo works without keys
 
 ## 1. Run in VS Code on Windows
 
-```git clone https://github.com/SairajGavhane/smart-router-chatbot.git
+```poweshell
+git clone https://github.com/SairajGavhane/smart-router-chatbot.git
 cd smart-router-chatbot
 ```
 then open its terminal.

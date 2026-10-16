@@ -1,0 +1,8 @@
+# Allow only the files required by the Dockerfile into the build context.
+**
+!Dockerfile
+!requirements.txt
+!app.py
+!core.py
+!.streamlit/
+!.streamlit/config.toml

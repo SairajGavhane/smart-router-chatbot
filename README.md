@@ -6,7 +6,10 @@ You need two API keys with credits/access for Live mode. Demo works without keys
 
 ## 1. Run in VS Code on Windows
 
-Extract the ZIP. Open the `smart_router_chatbot` folder in VS Code, then open its terminal.
+```git clone https://github.com/SairajGavhane/smart-router-chatbot.git
+cd smart-router-chatbot
+```
+then open its terminal.
 Use Python 3.11 or 3.12 for this project. Check available installations with `py -0p`.
 
 ```powershell

@@ -29,15 +29,47 @@ python3 -m venv .venv
 
 ## 2. Configure keys
 
-1. Create a TypeSafe key in https://console.typesafe.ai (official site: https://typesafe.ai).
-2. Create an OpenRouter key at https://openrouter.ai/settings/keys.
-3. In the app, select **Live**, open **API keys**, and enter the two keys.
-4. Keep **Routing → Auto**. Submit a question.
+1. Create a TypeSafe API key at https://console.typesafe.ai.
+2. Create an OpenRouter API key at https://openrouter.ai/settings/keys.
+3. Create your local secrets file from the template.
 
-Alternatively copy `.streamlit/secrets.toml.example` to `.streamlit/secrets.toml` and fill in its values.
-Environment variables `TYPESAFE_API_KEY` and `OPENROUTER_API_KEY` are also supported.
-Do not put keys in prompts, source code, screenshots, or GitHub. Secrets are ignored by Git.
-These credentials are different: a TypeSafe key cannot authorize an OpenRouter call.
+Windows PowerShell:
+
+```powershell
+Copy-Item .streamlit/secrets.toml.example .streamlit/secrets.toml
+```
+
+macOS/Linux:
+
+```bash
+cp .streamlit/secrets.toml.example .streamlit/secrets.toml
+```
+
+Skip the copy command if you already have a configured secrets.toml.
+
+4. Open `.streamlit/secrets.toml` and enter your own keys:
+
+```toml
+TYPESAFE_API_KEY = "your-typesafe-key"
+OPENROUTER_API_KEY = "your-openrouter-key"
+
+LOW_MODEL = "openai/gpt-4.1-mini"
+HIGH_MODEL = "openai/gpt-4.1"
+```
+
+5. Save the file and start the app. Select **Live → Auto** and submit a question.
+
+For Streamlit Community Cloud, enter the same configuration in
+**App settings → Secrets** instead of uploading your local secrets file.
+
+Environment variables `TYPESAFE_API_KEY` and `OPENROUTER_API_KEY`
+are also supported and take priority over saved secrets.
+
+Never commit actual API keys to GitHub. Keep
+`.streamlit/secrets.toml` in `.gitignore` and leave the example file's keys empty.
+
+TypeSafe and OpenRouter require separate keys. Live usage requires
+appropriate provider access and available credits.
 
 ## 3. Architecture and routing policy
 

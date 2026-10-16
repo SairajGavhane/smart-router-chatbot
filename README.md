@@ -152,7 +152,7 @@ Do not tune and report on the same examples. Include Jev overhead and failed req
 
 - `app.py`: Streamlit UI, session history and usage exports.
 - `core.py`: routing request, confidence policy, API clients and cost ledger.
-- `tests/test_core.py`: mocked integration and failure-path tests.
+- `test_core.py`: mocked integration and failure-path tests.
 - `evaluation_prompts.json`: starter cases for manual quality evaluation.
 - `.streamlit/`: theme and example secrets.
 

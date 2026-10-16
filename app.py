@@ -29,8 +29,8 @@ with st.sidebar:
         st.session_state.environment = environment
     mode = st.selectbox("Routing", ["Auto", "Economy", "Strong"])
     with st.expander("API keys", expanded=environment == "Live"):
-        jk = st.text_input("TypeSafe API key", type="password", value=setting("TYPESAFE_API_KEY"))
-        lk = st.text_input("OpenRouter API key", type="password", value=setting("OPENROUTER_API_KEY"))
+        jk = setting("TYPESAFE_API_KEY")
+        lk = setting("OPENROUTER_API_KEY")
         st.caption("Keys stay on this app's server/session and are never included in exports.")
         st.markdown("[TypeSafe console](https://console.typesafe.ai) · [OpenRouter keys](https://openrouter.ai/settings/keys)")
     with st.expander("Models & routing"):

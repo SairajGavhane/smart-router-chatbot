@@ -61,26 +61,35 @@ LOW_MODEL = "openai/gpt-4.1-mini"
 HIGH_MODEL = "openai/gpt-4.1"
 ```
 
-## For Docker Dekstop usecase only : 4.1(Docker Dekstop Instruction):-
-start Docker Desktop and run:
+### Run with Docker — alternative to local Python
+
+Choose either Docker or the local Python method. Docker users do not
+need to create a virtual environment or install requirements manually.
+
+1. Create `.streamlit/secrets.toml` from the example, enter your keys,
+   and save the file.
+2. Start Docker Desktop.
+3. If a local Streamlit app is already using port 8501, stop it first.
+4. Run these commands from the project folder:
+
 ```powershell
 docker compose up --build -d
 docker compose ps
 ```
 
-5. Save the file and start the app. Select **Live → Auto** and submit a question.
+5. Open http://localhost:8501 and select **Live → Auto**.
 
-For Streamlit Community Cloud, enter the same configuration in
-**App settings → Secrets** instead of uploading your local secrets file.
+To view logs:
 
-Environment variables `TYPESAFE_API_KEY` and `OPENROUTER_API_KEY`
-are also supported and take priority over saved secrets.
+```powershell
+docker compose logs --tail=80 app
+```
 
-Never commit actual API keys to GitHub. Keep
-`.streamlit/secrets.toml` in `.gitignore` and leave the example file's keys empty.
+To stop the app:
 
-TypeSafe and OpenRouter require separate keys. Live usage requires
-appropriate provider access and available credits.
+```powershell
+docker compose stop
+```
 
 ## 3. Architecture and routing policy
 
